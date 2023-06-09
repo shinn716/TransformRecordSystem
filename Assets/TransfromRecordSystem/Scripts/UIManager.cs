@@ -15,6 +15,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] float currentTime;
 
     public float GetCurrentTime { get { return currentTime; } }
+    public float GetMaxRecordTime { get { return maxRecordingTime; } }
+
 
     private MySliderHandler sliderHandler;
 
@@ -48,6 +50,8 @@ public class UIManager : MonoBehaviour
         currentTime = maxRecordingTime * sliderDragTime.value;
         currentTime = Mathf.Round(currentTime * 10) / 10;
         txtCurrentTime.text = currentTime.ToString("0.0");
+
+        AnimationPlayer.instance.Loop(currentTime);
     }
 
     public void EnableSlider()

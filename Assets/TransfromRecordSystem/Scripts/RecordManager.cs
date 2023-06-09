@@ -9,7 +9,7 @@ public class RecordManager : MonoBehaviour
     public static RecordManager instance;
 
     public Transform target;
-    public List<ObjectHandler> objectDataList = new List<ObjectHandler>();
+    [SerializeField] List<ObjectHandler> objectDataList = new List<ObjectHandler>();
     public List<RecordUnit> recordUnits = new List<RecordUnit>();
 
     public bool GetRecordingStatus { get { return isRecording; } }
@@ -48,6 +48,8 @@ public class RecordManager : MonoBehaviour
             objectDataList.Add(objHandler);
             objHandler.transformHandler += TransFormUpdate;
         }
+
+        AnimationPlayer.instance.Init(objectDataList);
     }
 
     private void OnApplicationQuit()

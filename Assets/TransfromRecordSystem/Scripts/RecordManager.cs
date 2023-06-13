@@ -13,6 +13,7 @@ public class RecordManager : MonoBehaviour
     public List<RecordUnit> recordUnits = new List<RecordUnit>();
 
     public bool GetRecordingStatus { get { return isRecording; } }
+    public List<ObjectHandler> GetObjectDataList { get { return objectDataList; } }
 
     bool isRecording = false;
     ExportJson exportjson;

@@ -30,6 +30,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sliderDragTime.interactable = RecordManager.instance.recordUnits.Count == 0 ? false : true;
         sliderDragTime.onValueChanged.AddListener(delegate { SliderValueChange(); });
         sliderHandler.SliderValue += EndDragSlider;
     }
@@ -43,6 +44,8 @@ public class UIManager : MonoBehaviour
     {
         if (RecordManager.instance.GetRecordingStatus)
             RecordManager.instance.AddTimestamp(currentTime);
+
+        AnimationPlayer.instance.Init(RecordManager.instance.GetObjectDataList);
     }
 
     void SliderValueChange()
@@ -54,8 +57,8 @@ public class UIManager : MonoBehaviour
         AnimationPlayer.instance.Loop(currentTime);
     }
 
-    public void EnableSlider()
+    public void EndRecord()
     {
-        sliderDragTime.interactable = true;
+        AnimationPlayer.instance.Init(RecordManager.instance.GetObjectDataList);
     }
 }

@@ -9,6 +9,8 @@ namespace RuntimeSceneGizmo
         private float sensitivity = 0.5f;
 #pragma warning restore 0649
 
+
+
         private Vector3 prevMousePos;
         private Transform mainCamParent;
         private Transform mainCamera;

@@ -39,18 +39,25 @@ public class RecordManager : MonoBehaviour
         instance = this;
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
         exportjson = new ExportJson();
         Transform[] allChildren = target.GetComponentsInChildren<Transform>();
+        int count = 0;
         foreach (Transform child in allChildren)
         {
+            if (count != 0)
+                child.gameObject.AddComponent<BoxCollider>();
             var objHandler = child.gameObject.AddComponent<ObjectHandler>();
             objectDataList.Add(objHandler);
             objHandler.transformHandler += TransFormUpdate;
+            count++;
         }
 
         AnimationPlayer.instance.Init(objectDataList);
+
+        yield return null;
+        UIManager.instance.AddItem(objectDataList);
     }
 
     private void OnApplicationQuit()

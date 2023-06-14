@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
-
+    public RuntimeGizmos.TransformGizmo transformGizmo;
 
     [SerializeField] Text txtCurrentTime;
     [SerializeField] Slider sliderDragTime;
     [SerializeField] Toggle togRecord;
+    [SerializeField] Transform group;
+    [SerializeField] GameObject prefabNameBtn;
     [SerializeField] int maxRecordingTime;
     [SerializeField] float currentTime;
 
@@ -60,5 +62,19 @@ public class UIManager : MonoBehaviour
     public void EndRecord()
     {
         AnimationPlayer.instance.Init(RecordManager.instance.GetObjectDataList);
+    }
+
+    public void AddItem(List<ObjectHandler> _list)
+    {
+        foreach (var i in _list)
+        {
+            if (i.objBase.Name != "root")
+            {
+                GameObject go = Instantiate(prefabNameBtn);
+                go.transform.GetComponent<NameBtn>().SetText(i.objBase.Name);
+                go.transform.SetParent(group);
+                go.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+            }
+        }
     }
 }

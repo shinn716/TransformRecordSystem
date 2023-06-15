@@ -4,19 +4,23 @@ using System.Collections.Generic;
 using System;
 using System.Linq;
 
+[RequireComponent(typeof(AnimationController))]
 public class RecordManager : MonoBehaviour
 {
     public static RecordManager instance;
 
     public Transform target;
-    [SerializeField] List<ObjectHandler> objectDataList = new List<ObjectHandler>();
-    public List<RecordUnit> recordUnits = new List<RecordUnit>();
 
     public bool GetRecordingStatus { get { return isRecording; } }
     public List<ObjectHandler> GetObjectDataList { get { return objectDataList; } }
+    public List<RecordUnit> GetRecordUnits { get { return recordUnits; } }
+    public string GetRootName { get { return rootName; } }
 
+    [SerializeField] List<RecordUnit> recordUnits = new List<RecordUnit>();
+    List<ObjectHandler> objectDataList = new List<ObjectHandler>();
+    ExportJson exportjson = new ExportJson();
     bool isRecording = false;
-    ExportJson exportjson;
+    string rootName = string.Empty;
 
     public class ExportJson
     {
@@ -34,37 +38,21 @@ public class RecordManager : MonoBehaviour
         public List<ObjectTransfromBase> objects = new List<ObjectTransfromBase>();
     }
 
+
     private void Awake()
     {
         instance = this;
     }
-
-    private IEnumerator Start()
+    private void Start()
     {
-        exportjson = new ExportJson();
-        Transform[] allChildren = target.GetComponentsInChildren<Transform>();
-        int count = 0;
-        foreach (Transform child in allChildren)
-        {
-            if (count != 0)
-                child.gameObject.AddComponent<BoxCollider>();
-            var objHandler = child.gameObject.AddComponent<ObjectHandler>();
-            objectDataList.Add(objHandler);
-            objHandler.transformHandler += TransFormUpdate;
-            count++;
-        }
-
-        AnimationPlayer.instance.Init(objectDataList);
-
-        yield return null;
-        UIManager.instance.AddItem(objectDataList);
+        InitRoot();
     }
-
     private void OnApplicationQuit()
     {
         foreach (var i in objectDataList)
             i.transformHandler -= TransFormUpdate;
     }
+
 
     private void TransFormUpdate(ObjectTransfromBase _obj)
     {
@@ -73,7 +61,7 @@ public class RecordManager : MonoBehaviour
 
         foreach (var i in recordUnits)
         {
-            if (i.timeStamp.Equals(UIManager.instance.GetCurrentTime))
+            if (i.timeStamp.Equals(UIManager.instance.CurrentTime))
             {
                 var target = i.objects.Find(x => x.Name == _obj.Name);
                 if (target != null)
@@ -88,6 +76,26 @@ public class RecordManager : MonoBehaviour
                 }
             }
         }
+    }
+
+
+    public void InitRoot()
+    {
+        Transform[] allChildren = target.GetComponentsInChildren<Transform>();
+        int count = 0;
+        foreach (Transform child in allChildren)
+        {
+            if (count == 0)
+                rootName = child.name;
+            else
+                child.gameObject.AddComponent<BoxCollider>();
+
+            var objHandler = child.gameObject.AddComponent<ObjectHandler>();
+            objectDataList.Add(objHandler);
+            objHandler.transformHandler += TransFormUpdate;
+            count++;
+        }
+        AnimationController.instance.Init(objectDataList);
     }
 
     public void AddTimestamp(float _timestamp)
@@ -110,8 +118,9 @@ public class RecordManager : MonoBehaviour
     public void StartRecording()
     {
         isRecording = true;
-        AddTimestamp(UIManager.instance.GetCurrentTime);
+        AddTimestamp(UIManager.instance.CurrentTime);
     }
+
     [ContextMenu("EndRecording")]
     public void EndRecording()
     {
@@ -125,7 +134,9 @@ public class RecordManager : MonoBehaviour
             recordUnits.Remove(i);
 
         recordUnits = recordUnits.OrderBy(x => x.timeStamp).ToList();
+        AnimationController.instance.Init(objectDataList);
     }
+
     [ContextMenu("ExportDataList")]
     public void ExportDataList()
     {

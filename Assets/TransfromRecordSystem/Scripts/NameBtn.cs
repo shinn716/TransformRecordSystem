@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 public class NameBtn : MonoBehaviour
 {
-    public string objName;
-
     [SerializeField] Text mtText;
     [SerializeField] Toggle btn;
+    private string objName;
 
     void Start()
     {
@@ -16,7 +15,6 @@ public class NameBtn : MonoBehaviour
         btn.onValueChanged.AddListener(delegate { OnClickBtn(btn.isOn); });
     }
 
-    // Update is called once per frame
     void OnClickBtn(bool value)
     {
         if (value)

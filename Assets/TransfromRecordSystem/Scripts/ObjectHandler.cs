@@ -18,11 +18,13 @@ public class ObjectHandler : MonoBehaviour
         objBase.Scale = transform.localScale;
     }
 
-    void Update()
+    private void Update()
     {
+        if (!RecordManager.instance.GetRecordingStatus)
+            return;
+
         if (transform.hasChanged)
         {
-            // print("The transform has changed! " + name);
             objBase.Position = transform.position;
             objBase.RotationEuler = transform.rotation.eulerAngles;
             objBase.Scale = transform.localScale;

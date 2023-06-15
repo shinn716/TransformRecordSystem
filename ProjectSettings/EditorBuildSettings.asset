@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/TransfromRecordSystem/Scenes/0_recorder.unity
+    guid: 893b65cca64e7a34f8420ad681a25c29
   m_configObjects: {}

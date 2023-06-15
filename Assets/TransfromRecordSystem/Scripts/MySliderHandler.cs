@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System;
 
+[RequireComponent(typeof(Slider))]
 public class MySliderHandler : MonoBehaviour, IPointerUpHandler
 {
     public event Action<float> SliderValue;

@@ -280,81 +280,81 @@ MonoBehaviour:
     objects:
     - Name: Vfd5A5Ms43Ansaa
       Bom: 
-      Position: {x: 0, y: -0.52, z: 0}
+      Position: {x: 0, y: 0, z: 0}
       RotationEuler: {x: 0, y: 90, z: 0}
-      Scale: {x: 7, y: 7, z: 7}
+      Scale: {x: 1, y: 1, z: 1}
     - Name: Vfd5A5Ms43Ansaa-Exp.001
       Bom: 
-      Position: {x: 1.1563578, y: -0.3384575, z: -0.0058059692}
+      Position: {x: 0.16519396, y: 0.02593464, z: -0.00082942843}
       RotationEuler: {x: 0, y: 90, z: 0}
       Scale: {x: 1, y: 1, z: 1}
     - Name: Vfd5A5Ms43Ansaa-Exp.004
       Bom: 
-      Position: {x: -0.042836178, y: -0.21246493, z: 0.0057395473}
+      Position: {x: -0.0061194543, y: 0.043933578, z: 0.00081993546}
       RotationEuler: {x: 0, y: 90, z: 0}
       Scale: {x: 1, y: 1, z: 1}
     - Name: Vfd5A5Ms43Ansaa-Exp.005_1
       Bom: 
-      Position: {x: -0.042836178, y: -0.21246493, z: 0.0057395473}
+      Position: {x: -0.0061194543, y: 0.043933578, z: 0.00081993546}
       RotationEuler: {x: 0, y: 90, z: 0}
       Scale: {x: 1, y: 1, z: 1}
     - Name: Cube.002
       Bom: 
-      Position: {x: -0.80890274, y: 0.9819498, z: -0.03491974}
+      Position: {x: -0.069627956, y: 0.24986327, z: -0.028279342}
       RotationEuler: {x: 0, y: 90, z: 0}
       Scale: {x: 1, y: 1, z: 1}
     - Name: Vfd5A5Ms43Ansaa-Exp.026
       Bom: 
-      Position: {x: 0.3177521, y: 1.0027543, z: 0.007197708}
+      Position: {x: 0.045393158, y: 0.21753633, z: 0.0010282435}
       RotationEuler: {x: 0, y: 90, z: 0}
       Scale: {x: 1, y: 1, z: 1}
     - Name: Cube.001
       Bom: 
-      Position: {x: -0.8359196, y: 1.1354539, z: -0.17609692}
+      Position: {x: -0.06962794, y: 0.24986327, z: 0.027089395}
       RotationEuler: {x: 0, y: 90, z: 0}
       Scale: {x: 1, y: 1, z: 1}
-  - timeStamp: 4
+  - timeStamp: 4.1
     objects:
     - Name: Vfd5A5Ms43Ansaa-Exp.001
       Bom: 
-      Position: {x: 0.36201683, y: -0.33845752, z: -0.0058059692}
+      Position: {x: 0.047873378, y: 0.02593464, z: -0.00082942843}
       RotationEuler: {x: 0, y: 90, z: 0}
       Scale: {x: 1, y: 1, z: 1}
     - Name: Vfd5A5Ms43Ansaa-Exp.026
       Bom: 
-      Position: {x: 0.31775582, y: 1.0204747, z: 0.007197708}
+      Position: {x: 0.045393977, y: 0.22186354, z: 0.0010282435}
       RotationEuler: {x: 0, y: 90, z: 0}
       Scale: {x: 1, y: 1, z: 1}
-  - timeStamp: 7.8
+  - timeStamp: 7.5
     objects:
     - Name: Vfd5A5Ms43Ansaa-Exp.026
       Bom: 
-      Position: {x: 0.3177926, y: 0.06425595, z: 0.007197708}
-      RotationEuler: {x: 0, y: 90, z: 0}
-      Scale: {x: 1, y: 1, z: 1}
-    - Name: Cube.001
-      Bom: 
-      Position: {x: -0.8359405, y: 1.1354539, z: -0.19593686}
-      RotationEuler: {x: 0, y: 90, z: 0}
-      Scale: {x: 1, y: 1, z: 1}
-  - timeStamp: 11.7
-    objects:
-    - Name: Cube.001
-      Bom: 
-      Position: {x: -0.4872804, y: -0.05740443, z: -0.1960007}
+      Position: {x: 0.045398768, y: 0.08563017, z: 0.0010282435}
       RotationEuler: {x: 0, y: 90, z: 0}
       Scale: {x: 1, y: 1, z: 1}
     - Name: Cube.002
       Bom: 
-      Position: {x: -0.8089207, y: 0.9819498, z: 0.04397118}
-      RotationEuler: {x: 41.87004, y: 150.73871, z: 159.49626}
+      Position: {x: -0.06963025, y: 0.2519819, z: -0.02828049}
+      RotationEuler: {x: 0, y: 90, z: 0}
       Scale: {x: 1, y: 1, z: 1}
-  - timeStamp: 14.5
+  - timeStamp: 11.6
     objects:
     - Name: Cube.002
       Bom: 
-      Position: {x: -0.48467407, y: -0.06408432, z: 0.19042534}
-      RotationEuler: {x: 11.869194, y: 352.6152, z: 6.960022}
+      Position: {x: -0.069637805, y: 0.06744657, z: -0.028284267}
+      RotationEuler: {x: 0, y: 90, z: 0}
+      Scale: {x: 1, y: 1, z: 1}
+    - Name: Cube.001
+      Bom: 
+      Position: {x: -0.06963143, y: 0.23989606, z: 0.027091138}
+      RotationEuler: {x: 323.63245, y: 137.29199, z: 3.6804368}
+      Scale: {x: 1, y: 1, z: 1}
+  - timeStamp: 15.6
+    objects:
+    - Name: Cube.001
+      Bom: 
+      Position: {x: -0.06963658, y: 0.06710388, z: 0.027093716}
+      RotationEuler: {x: 355.83475, y: 133.87946, z: 0.10052591}
       Scale: {x: 1, y: 1, z: 1}
 --- !u!4 &361155415
 Transform:
@@ -444,7 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3f273b3df9465438a0fc8baf28bc4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 0.5
+  camRotSpeed: 0.5
 --- !u!1 &961739749
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,7 +556,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961739749}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: -0.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -576,15 +576,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3910990755373119420, guid: 564b4683f63f42240be3705632e96326, type: 3}
       propertyPath: m_LocalScale.x
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3910990755373119420, guid: 564b4683f63f42240be3705632e96326, type: 3}
       propertyPath: m_LocalScale.y
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3910990755373119420, guid: 564b4683f63f42240be3705632e96326, type: 3}
       propertyPath: m_LocalScale.z
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3910990755373119420, guid: 564b4683f63f42240be3705632e96326, type: 3}
       propertyPath: m_LocalPosition.x
@@ -592,7 +592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3910990755373119420, guid: 564b4683f63f42240be3705632e96326, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.52
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3910990755373119420, guid: 564b4683f63f42240be3705632e96326, type: 3}
       propertyPath: m_LocalPosition.z

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class CameraControls : MonoBehaviour
 {
-    [SerializeField] private float sensitivity = 0.5f;
+    [SerializeField] private float camRotSpeed = 0.5f;
 
     private Vector3 prevMousePos;
     private Transform mainCamParent;
     private Transform mainCamera;
+    private float camMoveSpeed = .015f;
 
     private void Awake()
     {
@@ -24,7 +25,7 @@ public class CameraControls : MonoBehaviour
         else if (Input.GetMouseButton(1))
         {
             Vector3 mousePos = Input.mousePosition;
-            Vector2 deltaPos = (mousePos - prevMousePos) * sensitivity;
+            Vector2 deltaPos = (mousePos - prevMousePos) * camRotSpeed;
             Vector3 rot = mainCamParent.localEulerAngles;
 
             while (rot.x > 180f)
@@ -44,15 +45,15 @@ public class CameraControls : MonoBehaviour
             Pan(Input.GetAxis("Mouse X"), -Input.GetAxis("Mouse Y"));
 
         else if (Input.GetAxis("Mouse ScrollWheel") > 0f)
-            mainCamera.Translate(new Vector3(0, 0, .2f));
+            mainCamera.Translate(new Vector3(0, 0, camMoveSpeed));
 
         else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
-            mainCamera.Translate(-new Vector3(0, 0, .2f));
+            mainCamera.Translate(-new Vector3(0, 0, camMoveSpeed));
     }
 
     private void Pan(float right, float up)
     {
-        mainCamera.Translate(sensitivity * right * .2f * Vector3.left);
-        mainCamera.Translate(sensitivity * up * .2f * Vector3.up, Space.World);
+        mainCamera.Translate(camRotSpeed * right * camMoveSpeed * Vector3.left);
+        mainCamera.Translate(camRotSpeed * up * camMoveSpeed * Vector3.up, Space.World);
     }
 }

@@ -32,15 +32,13 @@ public class UIManager : MonoBehaviour
         sliderHandler = sliderDragTime.GetComponent<MySliderHandler>();
     }
 
-    private IEnumerator Start()
+    private void Start()
     {
-        sliderDragTime.interactable = RecordManager.instance.GetRecordUnits.Count == 0 ? false : true;
         sliderDragTime.onValueChanged.AddListener(delegate { SliderValueChange(); });
         sliderHandler.SliderValue += EndDragSlider;
         togPlay.onValueChanged.AddListener(delegate { PlayAndPause(togPlay.isOn); });
 
-        yield return null;
-        AddItem(RecordManager.instance.GetObjectDataList);
+        RecordManager.instance.EndInit += Init;
     }
 
     private void FixedUpdate()
@@ -55,6 +53,7 @@ public class UIManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         sliderHandler.SliderValue -= EndDragSlider;
+        RecordManager.instance.EndInit -= Init;
     }
 
 
@@ -92,5 +91,14 @@ public class UIManager : MonoBehaviour
                 go.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
             }
         }
+    }
+
+    private void Init(bool status)
+    {
+        if (!status)
+            return;
+
+        sliderDragTime.interactable = RecordManager.instance.GetAndSetRecordUnits.Count == 0 ? false : true;
+        AddItem(RecordManager.instance.GetObjectDataList);
     }
 }

@@ -238,11 +238,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!4 &225150057 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -3910990755373119420, guid: 564b4683f63f42240be3705632e96326, type: 3}
-  m_PrefabInstance: {fileID: 996485154}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &361155413
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +250,7 @@ GameObject:
   - component: {fileID: 361155414}
   - component: {fileID: 361155416}
   - component: {fileID: 361155417}
+  - component: {fileID: 361155418}
   m_Layer: 0
   m_Name: manager
   m_TagString: Untagged
@@ -274,88 +270,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7148edff4cdf96e4ca50a5233e2467a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 225150057}
-  recordUnits:
-  - timeStamp: 0
-    objects:
-    - Name: Vfd5A5Ms43Ansaa
-      Bom: 
-      Position: {x: 0, y: 0, z: 0}
-      RotationEuler: {x: 0, y: 90, z: 0}
-      Scale: {x: 1, y: 1, z: 1}
-    - Name: Vfd5A5Ms43Ansaa-Exp.001
-      Bom: 
-      Position: {x: 0.16519396, y: 0.02593464, z: -0.00082942843}
-      RotationEuler: {x: 0, y: 90, z: 0}
-      Scale: {x: 1, y: 1, z: 1}
-    - Name: Vfd5A5Ms43Ansaa-Exp.004
-      Bom: 
-      Position: {x: -0.0061194543, y: 0.043933578, z: 0.00081993546}
-      RotationEuler: {x: 0, y: 90, z: 0}
-      Scale: {x: 1, y: 1, z: 1}
-    - Name: Vfd5A5Ms43Ansaa-Exp.005_1
-      Bom: 
-      Position: {x: -0.0061194543, y: 0.043933578, z: 0.00081993546}
-      RotationEuler: {x: 0, y: 90, z: 0}
-      Scale: {x: 1, y: 1, z: 1}
-    - Name: Cube.002
-      Bom: 
-      Position: {x: -0.069627956, y: 0.24986327, z: -0.028279342}
-      RotationEuler: {x: 0, y: 90, z: 0}
-      Scale: {x: 1, y: 1, z: 1}
-    - Name: Vfd5A5Ms43Ansaa-Exp.026
-      Bom: 
-      Position: {x: 0.045393158, y: 0.21753633, z: 0.0010282435}
-      RotationEuler: {x: 0, y: 90, z: 0}
-      Scale: {x: 1, y: 1, z: 1}
-    - Name: Cube.001
-      Bom: 
-      Position: {x: -0.06962794, y: 0.24986327, z: 0.027089395}
-      RotationEuler: {x: 0, y: 90, z: 0}
-      Scale: {x: 1, y: 1, z: 1}
-  - timeStamp: 4.1
-    objects:
-    - Name: Vfd5A5Ms43Ansaa-Exp.001
-      Bom: 
-      Position: {x: 0.047873378, y: 0.02593464, z: -0.00082942843}
-      RotationEuler: {x: 0, y: 90, z: 0}
-      Scale: {x: 1, y: 1, z: 1}
-    - Name: Vfd5A5Ms43Ansaa-Exp.026
-      Bom: 
-      Position: {x: 0.045393977, y: 0.22186354, z: 0.0010282435}
-      RotationEuler: {x: 0, y: 90, z: 0}
-      Scale: {x: 1, y: 1, z: 1}
-  - timeStamp: 7.5
-    objects:
-    - Name: Vfd5A5Ms43Ansaa-Exp.026
-      Bom: 
-      Position: {x: 0.045398768, y: 0.08563017, z: 0.0010282435}
-      RotationEuler: {x: 0, y: 90, z: 0}
-      Scale: {x: 1, y: 1, z: 1}
-    - Name: Cube.002
-      Bom: 
-      Position: {x: -0.06963025, y: 0.2519819, z: -0.02828049}
-      RotationEuler: {x: 0, y: 90, z: 0}
-      Scale: {x: 1, y: 1, z: 1}
-  - timeStamp: 11.6
-    objects:
-    - Name: Cube.002
-      Bom: 
-      Position: {x: -0.069637805, y: 0.06744657, z: -0.028284267}
-      RotationEuler: {x: 0, y: 90, z: 0}
-      Scale: {x: 1, y: 1, z: 1}
-    - Name: Cube.001
-      Bom: 
-      Position: {x: -0.06963143, y: 0.23989606, z: 0.027091138}
-      RotationEuler: {x: 323.63245, y: 137.29199, z: 3.6804368}
-      Scale: {x: 1, y: 1, z: 1}
-  - timeStamp: 15.6
-    objects:
-    - Name: Cube.001
-      Bom: 
-      Position: {x: -0.06963658, y: 0.06710388, z: 0.027093716}
-      RotationEuler: {x: 355.83475, y: 133.87946, z: 0.10052591}
-      Scale: {x: 1, y: 1, z: 1}
+  target: {fileID: 0}
+  recordUnits: []
+  objectDataList: []
 --- !u!4 &361155415
 Transform:
   m_ObjectHideFlags: 0
@@ -399,6 +316,20 @@ MonoBehaviour:
   loop: 1
   currentTime: 0
   speed: 2
+--- !u!114 &361155418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361155413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da0eb4a0c96f66c40a8d855dd55cc8ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathType: 0
+  url: Vfd5A5Ms43Ansaa
 --- !u!1 &703342285
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,76 +494,3 @@ Transform:
   m_Father: {fileID: 703342286}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &996485154
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -3910990755373119420, guid: 564b4683f63f42240be3705632e96326, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: 564b4683f63f42240be3705632e96326, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: 564b4683f63f42240be3705632e96326, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: 564b4683f63f42240be3705632e96326, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: 564b4683f63f42240be3705632e96326, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: 564b4683f63f42240be3705632e96326, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: 564b4683f63f42240be3705632e96326, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: 564b4683f63f42240be3705632e96326, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: 564b4683f63f42240be3705632e96326, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: 564b4683f63f42240be3705632e96326, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: 564b4683f63f42240be3705632e96326, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: 564b4683f63f42240be3705632e96326, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: 564b4683f63f42240be3705632e96326, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: 564b4683f63f42240be3705632e96326, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8771091787928289351, guid: 564b4683f63f42240be3705632e96326, type: 3}
-      propertyPath: m_Name
-      value: root
-      objectReference: {fileID: 0}
-    - target: {fileID: 8771091787928289351, guid: 564b4683f63f42240be3705632e96326, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: -4161369568681901532, guid: 564b4683f63f42240be3705632e96326, type: 3}

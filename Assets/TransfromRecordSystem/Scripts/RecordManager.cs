@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using System.IO;
 
 [RequireComponent(typeof(AnimationController))]
 public class RecordManager : MonoBehaviour
@@ -13,14 +14,16 @@ public class RecordManager : MonoBehaviour
 
     public bool GetRecordingStatus { get { return isRecording; } }
     public List<ObjectHandler> GetObjectDataList { get { return objectDataList; } }
-    public List<RecordUnit> GetRecordUnits { get { return recordUnits; } }
+    public List<RecordUnit> GetAndSetRecordUnits { get { return recordUnits; } set { recordUnits = value; } }
     public string GetRootName { get { return rootName; } }
+    public event Action<bool> EndInit;
 
     [SerializeField] List<RecordUnit> recordUnits = new List<RecordUnit>();
     List<ObjectHandler> objectDataList = new List<ObjectHandler>();
     ExportJson exportjson = new ExportJson();
     bool isRecording = false;
     string rootName = string.Empty;
+
 
     public class ExportJson
     {
@@ -45,7 +48,7 @@ public class RecordManager : MonoBehaviour
     }
     private void Start()
     {
-        InitRoot();
+        StartCoroutine(InitRoot());
     }
     private void OnApplicationQuit()
     {
@@ -79,8 +82,11 @@ public class RecordManager : MonoBehaviour
     }
 
 
-    public void InitRoot()
+    public IEnumerator InitRoot()
     {
+        if (target == null)
+            yield break;
+
         Transform[] allChildren = target.GetComponentsInChildren<Transform>();
         int count = 0;
         foreach (Transform child in allChildren)
@@ -96,6 +102,15 @@ public class RecordManager : MonoBehaviour
             count++;
         }
         AnimationController.instance.Init(objectDataList);
+
+        if (recordUnits.Count != 0)
+        {
+            allChildren[0].transform.SetPositionAndRotation(recordUnits[0].objects[0].Position, Quaternion.Euler(recordUnits[0].objects[0].RotationEuler));
+            allChildren[0].transform.localScale = recordUnits[0].objects[0].Scale;
+        }
+
+        yield return null;
+        EndInit?.Invoke(true);
     }
 
     public void AddTimestamp(float _timestamp)
@@ -143,5 +158,11 @@ public class RecordManager : MonoBehaviour
         exportjson.ObjectList = recordUnits;
         String json = JsonUtility.ToJson(exportjson);
         Debug.Log(json);
+
+        StreamWriter writer = new StreamWriter(Path.Combine(Application.streamingAssetsPath, GetRootName, GetRootName + ".json"));
+        writer.Flush();
+        writer.Write(json);
+        writer.Close();
+        print(Path.Combine(Application.streamingAssetsPath, GetRootName + ".json"));
     }
 }

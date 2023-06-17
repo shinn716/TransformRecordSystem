@@ -62,27 +62,27 @@ public class AnimationController : MonoBehaviour
 
         for (int i = 0; i < objs.Length; i++)
         {
-            for (int j = 0; j < RecordManager.instance.GetRecordUnits.Count; j++)
+            for (int j = 0; j < RecordManager.instance.GetAndSetRecordUnits.Count; j++)
             {
-                for (int k = 0; k < RecordManager.instance.GetRecordUnits[j].objects.Count; k++)
+                for (int k = 0; k < RecordManager.instance.GetAndSetRecordUnits[j].objects.Count; k++)
                 {
-                    if (objs[i].name.Equals(RecordManager.instance.GetRecordUnits[j].objects[k].Name))
+                    if (objs[i].name.Equals(RecordManager.instance.GetAndSetRecordUnits[j].objects[k].Name))
                     {
                         var check = objProps.Exists(x => x.obj.name == objs[i].name);
                         if (check)
                         {
                             int index = objProps.FindIndex(x => x.obj.name == objs[i].name);
-                            objProps[index].SetItem(RecordManager.instance.GetRecordUnits[j].timeStamp, RecordManager.instance.GetRecordUnits[j].objects[k].Position, RecordManager.instance.GetRecordUnits[j].objects[k].RotationEuler, RecordManager.instance.GetRecordUnits[j].objects[k].Scale);
+                            objProps[index].SetItem(RecordManager.instance.GetAndSetRecordUnits[j].timeStamp, RecordManager.instance.GetAndSetRecordUnits[j].objects[k].Position, RecordManager.instance.GetAndSetRecordUnits[j].objects[k].RotationEuler, RecordManager.instance.GetAndSetRecordUnits[j].objects[k].Scale);
                         }
                         else
                         {
-                            objProps.Add(new ObjProp(objs[i].transform, RecordManager.instance.GetRecordUnits[j].timeStamp, RecordManager.instance.GetRecordUnits[j].objects[k].Position, RecordManager.instance.GetRecordUnits[j].objects[k].RotationEuler, RecordManager.instance.GetRecordUnits[j].objects[k].Scale));
+                            objProps.Add(new ObjProp(objs[i].transform, RecordManager.instance.GetAndSetRecordUnits[j].timeStamp, RecordManager.instance.GetAndSetRecordUnits[j].objects[k].Position, RecordManager.instance.GetAndSetRecordUnits[j].objects[k].RotationEuler, RecordManager.instance.GetAndSetRecordUnits[j].objects[k].Scale));
                         }
                     }
                 }
 
-                if (j.Equals(RecordManager.instance.GetRecordUnits.Count - 1))
-                    totalRecordTime = RecordManager.instance.GetRecordUnits[j].timeStamp;
+                if (j.Equals(RecordManager.instance.GetAndSetRecordUnits.Count - 1))
+                    totalRecordTime = RecordManager.instance.GetAndSetRecordUnits[j].timeStamp;
             }
         }
     }

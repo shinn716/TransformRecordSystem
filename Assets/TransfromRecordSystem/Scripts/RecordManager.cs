@@ -157,12 +157,12 @@ public class RecordManager : MonoBehaviour
     {
         exportjson.ObjectList = recordUnits;
         String json = JsonUtility.ToJson(exportjson);
-        Debug.Log(json);
+        // Debug.Log(json);
 
         StreamWriter writer = new StreamWriter(Path.Combine(Application.streamingAssetsPath, GetRootName, GetRootName + ".json"));
         writer.Flush();
         writer.Write(json);
         writer.Close();
-        print(Path.Combine(Application.streamingAssetsPath, GetRootName + ".json"));
+        print($"[Export] {Path.Combine(Application.streamingAssetsPath, GetRootName + ".json")}");
     }
 }

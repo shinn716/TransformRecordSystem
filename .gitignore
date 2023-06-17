@@ -72,7 +72,5 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 
-/[Aa]ssets/DModels/
-/[Aa]ssets/DModels.meta
 Build/
 /[Aa]ssets/StreamingAssets/

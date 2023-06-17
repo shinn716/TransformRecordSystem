@@ -45,7 +45,7 @@ public class UIManager : MonoBehaviour
     {
         if (isPlaying)
         {
-            sliderDragTime.value += Time.deltaTime / maxRecordingTime;
+            sliderDragTime.value += Time.fixedDeltaTime / maxRecordingTime;
             sliderDragTime.value = Mathf.Clamp(sliderDragTime.value, 0, maxRecordingTime);
         }
     }

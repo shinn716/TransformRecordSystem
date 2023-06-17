@@ -7,6 +7,7 @@ public class AnimationPlayer : MonoBehaviour
 {
     [SerializeField] bool playOnStart = true;
     [SerializeField] bool loop = false;
+    [SerializeField] bool pause = false;
     [SerializeField] float currentTime = 0;
     [SerializeField] float speed = 1;
 
@@ -21,7 +22,9 @@ public class AnimationPlayer : MonoBehaviour
     {
         if (isPlaying)
         {
-            currentTime += Time.deltaTime * speed;
+            if (!pause)
+                currentTime += Time.deltaTime * speed;
+
             if (loop)
             {
                 if (currentTime > AnimationController.instance.GetTotalTime())

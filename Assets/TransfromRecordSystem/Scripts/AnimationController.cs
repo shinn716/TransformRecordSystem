@@ -11,8 +11,6 @@ public class AnimationController : MonoBehaviour
     // [SerializeField]
     private List<ObjProp> objProps = new List<ObjProp>();
 
-    private ObjectHandler[] objs;
-
     private float totalRecordTime = 0;
 
     [Serializable]
@@ -58,7 +56,7 @@ public class AnimationController : MonoBehaviour
     public void Init(List<ObjectHandler> _list)
     {
         objProps.Clear();
-        objs = _list.ToArray();
+        var objs = _list.ToArray();
 
         for (int i = 0; i < objs.Length; i++)
         {

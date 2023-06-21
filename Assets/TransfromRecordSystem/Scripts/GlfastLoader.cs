@@ -36,7 +36,7 @@ public class GlfastLoader : MonoBehaviour
 
     void Start()
     {
-        LoadGltfBinaryFromMemory(Path.Combine(fullUrl, folderName + ".glb"), null, folderName, (go) =>
+        LoadGltfBinaryFromMemory(Path.Combine(fullUrl, folderName + ".glb"), transform, folderName, (go) =>
         {
             try
             {
@@ -58,8 +58,13 @@ public class GlfastLoader : MonoBehaviour
         bool success = await gltf.LoadGltfBinary(data, new System.Uri(filePath));
         if (success)
         {
-            success = await gltf.InstantiateMainSceneAsync(obj);
-            var scene = GameObject.Find(gltf.GetSceneName(0));
+            await gltf.InstantiateMainSceneAsync(obj);
+            // var scene = GameObject.Find(gltf.GetSceneName(0));
+            // scene.name = name;
+            // action.Invoke(scene);
+
+            var scene = transform.GetChild(0).gameObject;
+            scene.transform.parent = null;
             scene.name = name;
             action.Invoke(scene);
         }

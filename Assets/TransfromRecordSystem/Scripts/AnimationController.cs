@@ -107,7 +107,7 @@ public class AnimationController : MonoBehaviour
                 if (testIndex[i] != 0)
                 {
                     var prvIndex = testIndex[i] - 1;
-                    if (prvIndex < 0)
+                    if (prvIndex <= 0)
                         prvIndex = 0;
 
                     float time = (_timestamp - objProps[i].locations[prvIndex].time) / (objProps[i].locations[testIndex[i]].time - objProps[i].locations[prvIndex].time);

@@ -94,8 +94,10 @@ public class RecordManager : MonoBehaviour
             if (count == 0)
                 rootName = child.name;
             else
-                child.gameObject.AddComponent<BoxCollider>();
-
+            {
+                if (child.GetComponent<MeshRenderer>())
+                    child.gameObject.AddComponent<BoxCollider>();
+            }
             var objHandler = child.gameObject.AddComponent<ObjectHandler>();
             objectDataList.Add(objHandler);
             objHandler.transformHandler += TransFormUpdate;

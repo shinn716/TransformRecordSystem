@@ -700,7 +700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathType: 0
-  url: Vfd5A5Ms43Ansaa
+  url: pony_cartoon
 --- !u!1 &429902729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,7 +1271,7 @@ MonoBehaviour:
   SetRotateType: 101
   SetScaleType: 114
   SetAllTransformType: 121
-  SetSpaceToggle: 0
+  SetSpaceToggle: 32
   SetPivotModeToggle: 0
   SetCenterTypeToggle: 99
   SetScaleTypeToggle: 115

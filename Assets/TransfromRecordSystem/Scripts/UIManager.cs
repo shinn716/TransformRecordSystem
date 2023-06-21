@@ -83,7 +83,7 @@ public class UIManager : MonoBehaviour
     {
         foreach (var i in _list)
         {
-            if (i.objBase.Name != RecordManager.instance.GetRootName)
+            if (i.objBase.Name != RecordManager.instance.GetRootName && i.gameObject.GetComponent<Collider>())
             {
                 GameObject go = Instantiate(prefabNameBtn);
                 go.transform.GetComponent<NameBtn>().SetText(i.objBase.Name);
